@@ -1,0 +1,13 @@
+*.conf
+*.png
+*.jpg
+*.ico
+
+
+# allow
+!*.pl
+!*.pm
+!*.t
+!*.PL
+
+
