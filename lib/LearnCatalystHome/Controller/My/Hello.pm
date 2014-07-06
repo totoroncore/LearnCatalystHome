@@ -27,6 +27,11 @@ sub index :Path :Args(0) {
     $c->response->body('Matched LearnCatalystHome::Controller::My::Hello in My::Hello.');
 }
 
+# add path
+sub intro :Local {
+    my ( $self, $c ) = @_;
+	$c->response->body('HelloWorld_Edit');
+}
 
 
 =encoding utf8
