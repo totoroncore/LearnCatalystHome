@@ -1,0 +1,8 @@
+<html>
+<head>
+<title>My/Hello/Intro: [% msg | html %]</title>
+</head>
+<body>
+[% msg | html %]
+</body>
+</html>

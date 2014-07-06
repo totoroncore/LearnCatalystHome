@@ -30,7 +30,7 @@ sub index :Path :Args(0) {
 # add path
 sub intro :Local {
     my ( $self, $c ) = @_;
-	$c->response->body('HelloWorld_Edit');
+	$c->stash->{msg} = 'HelloWorldView';
 }
 
 
