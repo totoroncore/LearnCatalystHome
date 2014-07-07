@@ -1,0 +1,76 @@
+#!/usr/bin/env bash
+
+
+#aptitude update
+aptitude install -y git
+aptitude install -y vim
+aptitude install -y perlbrew
+aptitude install -y cpanminus
+aptitude install -y perl-doc
+aptitude install -y build-essential
+cpanm local::lib
+aptitude install -y mysql-server
+aptitude install -y mysql-client
+aptitude install -y zsh
+# for DBD
+aptitude install -y libmysqlclient-dev
+
+
+# perl
+cpanm YAML
+cpanm Catalyst::Runtime
+cpanm Catalyst::Devel
+
+cpanm Catalyst::View::TT
+cpanm Catalyst::View::JSON
+
+cpanm Catalyst::Model::DBIC::Schema
+ln -s /usr/bin/mysql_config /usr/local/bin/mysql_config
+cpanm DBD::mysql
+cpanm DateTime::Format::MySQL
+cpanm Catalyst::Model::DBI
+cpanm Catalyst::Model::Adaptor
+cpanm DBIx::Class::Cursor::Cached
+
+cpanm Catalyst::Plugin::Session
+cpanm Catalyst::Plugin::Session::State::Cookie
+cpanm Catalyst::Plugin::Session::Store::File
+cpanm Catalyst::Plugin::Authentication
+cpanm Catalyst::Plugin::Authentication::Store::DBIx::Class
+cpanm Catalyst::Plugin::Authorization::Roles
+cpanm Catalyst::Plugin::FormValidator::Simple
+cpanm Catalyst::Plugin::FormValidator::Simple::Auto
+cpanm FormValidator::Simple::Plugin::Japanese
+cpanm Catalyst::Plugin::Cache
+cpanm Catalyst::Plugin::PageCache
+cpanm Catalyst::Plugin::I18N
+
+cpanm Catalyst::Controller::ActionRole
+cpanm XML::Simple
+cpanm Test::Base
+cpanm Test::Pod::Coverage
+
+
+
+# MySQL
+# GRANT ALL PRIVILEGES ON cataldb.* TO 'cataluser'@'localhost' IDENTIFIED BY 'catal_pass';
+# create database cataldb;
+
+
+# create  model
+# learncatalysthome_create.pl model CatalDB DBIC::Schema Catal::Schema create=static dbi:mysql:cataldb cataluser catal_pass AutoCommit=1 on_connect_do='["SET NAMES utf8"]'
+# _create.pl model <model_name> <helper_name> <schema_class_name> <how_schema_class> <db_connect_info> <db_user_name> <db_user_pass> <extra>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
