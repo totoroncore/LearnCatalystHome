@@ -62,6 +62,7 @@ cpanm Test::Pod::Coverage
 # _create.pl model <model_name> <helper_name> <schema_class_name> <how_schema_class> <db_connect_info> <db_user_name> <db_user_pass> <extra>
 
 
+# perl script/learncatalysthome_create.pl model LearnCatalystHomeDB DBIC::Schema LearnCatalystHome::Schema create=static dbi:mysql:cataldb cataluser catal_pass AutoCommit=1 on_connect_do='["SET NAMES utf8"]'  
 
 
 
