@@ -33,6 +33,11 @@ sub intro :Local {
 	$c->stash->{msg} = 'HelloWorldView';
 }
 
+sub list :Local {
+	my ($self, $c) = @_;
+	$c->stash->{list} = [$c->model('LearnCatalystHomeDB::Book')->all];
+}
+
 
 =encoding utf8
 

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>Model</title>
+<meta name="description" content="ディスクリプション内容" />
+<meta name="keywords" content="キーワード" />
+<link rel="stylesheet" type="text/css" href="style.css" />
+   <!--[if lt IE 9]>
+   <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+   <![endif]-->
+</head>
+<body>
+
+<table border="1">
+<tr>
+	<th>ISBN</th><th>Title</th><th>Price</th><th>Publisher</th><th>PublishedDate</th>
+</tr>
+[% FOREACH item = list %]
+<tr>
+	<th>[% item.isbn | html %]</th>
+	<th>[% item.title | html %]</th>
+	<th>[% item.price | html %]</th>
+	<th>[% item.publish | html %]</th>
+	<th>[% item.published %]</th>
+</tr>
+[% END %]
+</table>
+
+</body>
+</html>
