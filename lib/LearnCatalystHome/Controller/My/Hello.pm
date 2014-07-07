@@ -35,6 +35,7 @@ sub intro :Local {
 
 sub list :Local {
 	my ($self, $c) = @_;
+	$c->stash->{title} = 'BookListView';
 	$c->stash->{list} = [$c->model('LearnCatalystHomeDB::Book')->all];
 }
 
