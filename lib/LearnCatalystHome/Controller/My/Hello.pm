@@ -4,6 +4,10 @@ use namespace::autoclean;
 
 BEGIN { extends 'Catalyst::Controller'; }
 
+
+use LearnCatalystHome::Schema::ResultSet::Book;
+
+
 =head1 NAME
 
 LearnCatalystHome::Controller::My::Hello - Catalyst Controller
@@ -39,6 +43,10 @@ sub list :Local {
 	$c->stash->{list} = [$c->model('LearnCatalystHomeDB::Book')->all];
 }
 
+sub avg_book_list :Local {
+	my ($self, $c) = @_;
+	$c->stash->{list} = $c->model('LearnCatalystHomeDB::Book')->get_avg_price;
+}
 
 =encoding utf8
 

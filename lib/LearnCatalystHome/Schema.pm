@@ -8,7 +8,10 @@ use Moose;
 use MooseX::MarkAsMethods autoclean => 1;
 extends 'DBIx::Class::Schema';
 
-__PACKAGE__->load_namespaces;
+__PACKAGE__->load_namespaces(
+    result_namespace => 'Result',
+    resultset_namespace => 'ResultSet',
+);
 
 
 # Created by DBIx::Class::Schema::Loader v0.07040 @ 2014-07-07 23:24:55
